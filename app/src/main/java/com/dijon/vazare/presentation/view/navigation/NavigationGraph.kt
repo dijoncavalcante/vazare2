@@ -11,6 +11,7 @@ import com.dijon.vazare.MainActivity
 import com.dijon.vazare.commons.VazareConstants
 import com.dijon.vazare.commons.VazareConstants.Navigation.ROOT_GRAPH
 import com.dijon.vazare.commons.VazareConstants.Navigation.VAZARE_ROOT_GRAPH
+import com.dijon.vazare.home.OutlinedTextFieldComponent
 import com.dijon.vazare.home.TimePickerExamples
 import com.dijon.vazare.home.VazareScreen
 import com.dijon.vazare.routes.VazareRoutes
@@ -47,7 +48,15 @@ fun NavigationGraphRoutes(
             startDestination = VazareConstants.Screen.VAZARE
         ) {
             composable(route = VazareNavigationScreen.Vazare.route){
-//                VazareScreen()
+                OutlinedTextFieldComponent(
+                    value = "value",
+                    onValueChange = {
+                        val txt = it
+                    },
+                    supportingText = "",
+                    isError = false,
+                )
+                VazareScreen()
                 TimePickerExamples()
             }
         }
